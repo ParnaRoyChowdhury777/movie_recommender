@@ -6,10 +6,13 @@ const API_URL = 'https://www.omdbapi.com?apikey=6ad9847';   // API URL
 const App = () => {
 
     const searchMovies = async (title) => {
-        const response = await
+        const response = await fetch(`${API_URL}&s=${title}`);
+        const data = await response.json();
+
+        console.log(data);
     }
     useEffect(() => {
-
+        searchMovies('Spiderman');
     }, []);
 
     return (
