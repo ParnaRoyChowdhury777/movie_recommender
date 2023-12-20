@@ -23,16 +23,9 @@ const App = () => {
 
     useEffect(() => {
          searchMovies('Avengers');
-    }, []);
-
-    
-  
-    useEffect(() => {
-      // Simulate fetching data from an API
-      setTimeout(() => {
-        setData('Some data fetched from API');
-        setIsLoading(false);
-      }, 2000);
+         setTimeout(() => {
+            setIsLoading(false);
+          }, 2000);
     }, []);
   
     if (isLoading) {
