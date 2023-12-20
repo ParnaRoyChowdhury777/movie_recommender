@@ -11,20 +11,20 @@ const App = () => {
 
     const[movies, setMovies] = useState([]);
     const[searchTerm, setSearchTerm] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     const searchMovies = async (title) => {
+        setIsLoading(true);
         const response = await fetch(`${API_URL}&s=${title}`);
         const Data = await response.json();
-
         setMovies(Data.Search);
+        setTimeout(() => {
+            setIsLoading(false);
+          }, 1000);
     }
 
     useEffect(() => {
          searchMovies('Avengers');
-         setTimeout(() => {
-            setIsLoading(false);
-          }, 2000);
     }, []);
   
     if (isLoading) {
