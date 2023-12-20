@@ -1,6 +1,9 @@
 import React from "react";
 
 const MovieCard = ({ movie }) => {
+    if (movie.Poster === 'N/A') {
+        return null; // Return null to not render anything if Poster is 'N/A'
+    }
     return (
         <div className="movie">
             <div>
@@ -8,7 +11,7 @@ const MovieCard = ({ movie }) => {
             </div>
 
             <div>
-                <img src={movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/400'} alt={movie.Title}/>
+                <img src={movie.Poster} alt={movie.Title}/>
             </div>
 
             <div>
