@@ -14,9 +14,13 @@ const App = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const searchMovies = async (title) => {
+        setIsLoading(true);
         const response = await fetch(`${API_URL}&s=${title}`);
         const Data = await response.json();
         setMovies(Data.Search);
+        setTimeout(() => {
+            setIsLoading(false);
+          }, 1000);
     }
 
     useEffect(() => {
@@ -37,11 +41,7 @@ const App = () => {
                         alert('Please enter a movie name');
                     }
                     else{
-                        setIsLoading(true);
                         searchMovies(searchTerm);
-                        setTimeout(() => {
-                            setIsLoading(false);
-                          }, 1000);
                     }}}/>
             </div>
 
