@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import './App.css';
 
 const API_URL = 'https://www.omdbapi.com?apikey=6ad9847';   // API URL
 
