@@ -11,7 +11,6 @@ const App = () => {
 
     const[movies, setMovies] = useState([]);
     const[searchTerm, setSearchTerm] = useState('');
-    const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     const searchMovies = async (title) => {
