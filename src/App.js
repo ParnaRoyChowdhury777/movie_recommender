@@ -39,8 +39,6 @@ const App = () => {
                 <img src = {SearchIcon} alt="Search Icon" onClick={() => searchMovies(searchTerm)}/>
             </div>
 
-
-
             { movies?.length > 0
                 ? (
                     <div className="container">
