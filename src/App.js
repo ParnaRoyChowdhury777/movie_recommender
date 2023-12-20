@@ -11,7 +11,8 @@ const App = () => {
 
     const[movies, setMovies] = useState([]);
     const[searchTerm, setSearchTerm] = useState('');
-    const[loading, setLoading] = useState(true);
+    const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     const searchMovies = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`);
@@ -24,8 +25,7 @@ const App = () => {
          searchMovies('Avengers');
     }, []);
 
-    const [data, setData] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
+    
   
     useEffect(() => {
       // Simulate fetching data from an API
